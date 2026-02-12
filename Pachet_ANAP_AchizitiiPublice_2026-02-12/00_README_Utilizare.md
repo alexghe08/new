@@ -38,3 +38,24 @@ Consultați ghidurile din folderul `06_Pachete_Pregatite` pentru a vedea ce docu
 - `Licitatie_Deschisa.md`
 - `Acord_Cadru.md`
 - `Sectorial.md`
+
+## Utilitar de Chunking Inteligent (Nou)
+
+Pachetul include un script Python `smart_chunker.py` pentru împărțirea documentelor lungi în secțiuni logice, respectând structura capitolelor și integritatea propozițiilor.
+
+### Utilizare:
+
+```bash
+python3 smart_chunker.py <cale_fisier> --max-size <nr_caractere>
+```
+
+Exemplu:
+```bash
+python3 smart_chunker.py 00_README_Utilizare.md --max-size 1000
+```
+
+Scriptul detectează automat:
+- Titluri Markdown (#, ##)
+- Numerotări (1., 1.1.)
+- Cuvinte cheie (CAPITOLUL, SECTIUNEA)
+- Limitele propozițiilor (nu taie fraza la jumătate)
